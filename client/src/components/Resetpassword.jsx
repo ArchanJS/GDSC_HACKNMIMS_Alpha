@@ -33,7 +33,7 @@ function Resetpassword() {
         }
         else{
             try {
-                const res=await fetch(`/api/auth/passwordreset/${resetToken}`,{
+                const res=await fetch(`https://medi-backend.onrender.com/api/auth/passwordreset/${resetToken}`,{
                     method:"PUT",
                     headers:{
                         "Content-Type":"application/json"

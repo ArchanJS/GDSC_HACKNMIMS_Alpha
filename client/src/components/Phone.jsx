@@ -22,7 +22,7 @@ function Phone() {
         else{
 
             try {
-                const res = await fetch(`/api/auth/verify/${phone}`, {
+                const res = await fetch(`https://medi-backend.onrender.com/api/auth/verify/${phone}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -51,7 +51,7 @@ function Phone() {
     }
     const resendCode=async()=>{
         try {
-            await axios.post(`/api/auth/verify/${phone}/resend`);
+            await axios.post(`https://medi-backend.onrender.com/api/auth/verify/${phone}/resend`);
             setSucc("✔ Code sent !");
                     setTimeout(() => {
                         setSucc("");

@@ -46,7 +46,7 @@ function Signup() {
                 }, 5000);
             } 
             else {
-                const res = await fetch('/api/auth/register', {
+                const res = await fetch('https://medi-backend.onrender.com/api/auth/register', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

@@ -26,7 +26,7 @@ const Chat = props => {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },
       };
-      const { data } = await axios.get("/api/private", config);
+      const { data } = await axios.get("https://medi-backend.onrender.com/api/private", config);
       console.log(data);
       setUser(data.user.username);
       setUserID(data.user.userID);
@@ -70,7 +70,7 @@ const Chat = props => {
               Authorization: `Bearer ${localStorage.getItem("authToken")}`,
             },
           };
-          axios.post(`/api/private/user/chat/${userID}/${doctor}/${date}/${time}`,config)
+          axios.post(`https://medi-backend.onrender.com/api/private/user/chat/${userID}/${doctor}/${date}/${time}`,config)
           .then(  
             setTimeout(() => {
                history.push('/');

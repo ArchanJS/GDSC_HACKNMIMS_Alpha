@@ -30,7 +30,7 @@ function Contact() {
                     },
                 };
 
-                const { data } = await axios.post(`/api/auth/contact`,{email,message},config);
+                const { data } = await axios.post(`https://medi-backend.onrender.com/api/auth/contact`,{email,message},config);
                 setEmail("");
                 setMessage("");
                 setSucc("✔ Mail sent");

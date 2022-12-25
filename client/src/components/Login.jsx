@@ -32,7 +32,7 @@ function Login() {
             }
             else{
                 const { data } = await axios.post(
-                    "/api/auth/login",
+                    "https://medi-backend.onrender.com/api/auth/login",
                     { email, password },
                     config
                   );

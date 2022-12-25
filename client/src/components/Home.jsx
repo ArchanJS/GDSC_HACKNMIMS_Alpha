@@ -23,7 +23,7 @@ function Home() {
                         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
                     },
                 };
-                const { data } = await axios.get("/api/private", config);
+                const { data } = await axios.get("https://medi-backend.onrender.com/api/private", config);
                 console.log(data);
                 setUser(data.user.username);
                 setUserID(data.user.userID);
@@ -48,7 +48,7 @@ function Home() {
                         "Content-Type": "application/json"
                     },
                 };
-                const { data } = await axios.get(`/api/auth/user/${searchID}`, config);
+                const { data } = await axios.get(`https://medi-backend.onrender.com/api/auth/user/${searchID}`, config);
                 history.push(`/searchprofile/${searchID}`);
             }
         } catch (error) {

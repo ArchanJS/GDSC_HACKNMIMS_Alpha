@@ -18,7 +18,7 @@ const postData=async(e)=>{
     else{
 
         try {
-            const res=await fetch('/api/auth/forgotpassword',{
+            const res=await fetch('https://medi-backend.onrender.com/api/auth/forgotpassword',{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"

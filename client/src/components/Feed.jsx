@@ -44,8 +44,8 @@ function Feed() {
                         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
                     },
                 };
-                await axios.post('/api/private/postNeed', { content,title }, config);
-                const { data } = await axios.get('/api/private/getMyPost', config);
+                await axios.post('https://medi-backend.onrender.com/api/private/postNeed', { content,title }, config);
+                const { data } = await axios.get('https://medi-backend.onrender.com/api/private/getMyPost', config);
                 setLi2(data);
                 setDetails("");
                 setTitle("");
@@ -71,7 +71,7 @@ function Feed() {
                     Authorization: `Bearer ${localStorage.getItem("authToken")}`,
                 },
             };
-            const { data } = await axios.get('/api/private/getOthersPost', config);
+            const { data } = await axios.get('https://medi-backend.onrender.com/api/private/getOthersPost', config);
             setLi(data);
             console.log(data);
 
@@ -88,7 +88,7 @@ function Feed() {
                     Authorization: `Bearer ${localStorage.getItem("authToken")}`,
                 },
             };
-            const { data } = await axios.get('/api/private/getMyPost', config);
+            const { data } = await axios.get('https://medi-backend.onrender.com/api/private/getMyPost', config);
             setLi2(data);
             console.log(data);
 
@@ -107,7 +107,7 @@ function Feed() {
             };
             console.log(id);
             await axios.delete(`api/private/postNeed/accept/${id}`, config)
-            const { data } = await axios.get('/api/private/getOthersPost', config);
+            const { data } = await axios.get('https://medi-backend.onrender.com/api/private/getOthersPost', config);
             setLi(data);
             setOpen(false);
         } catch (error) {
@@ -146,7 +146,7 @@ function Feed() {
             };
             console.log(id);
             await axios.delete(`api/private/postNeed/delete/${id}`,config);
-            const { data } = await axios.get('/api/private/getMyPost', config);
+            const { data } = await axios.get('https://medi-backend.onrender.com/api/private/getMyPost', config);
             setLi2(data);
             setOpen2(false);
 

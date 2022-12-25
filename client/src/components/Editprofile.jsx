@@ -55,7 +55,7 @@ function Editprofile() {
             Authorization: `Bearer ${localStorage.getItem("authToken")}`,
           },
         };
-        const { data } = await axios.get("/api/private", config);
+        const { data } = await axios.get("https://medi-backend.onrender.com/api/private", config);
         setName(data.user.username);
         setPhone(data.user.phone)
         setEmail(data.user.email)
@@ -88,7 +88,7 @@ const postData=async(e)=>{
         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
       },
     };
-    const {data}=await axios.post(`/api/private//user/${userID}/edit`,{
+    const {data}=await axios.post(`https://medi-backend.onrender.com/api/private//user/${userID}/edit`,{
       username:name,
       phone:phone,
       email:email,
@@ -134,7 +134,7 @@ const deleteProfile=async()=>{
         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
       },
     };
-    await axios.delete(`/api/private/user/${userID}/delete`,config);
+    await axios.delete(`https://medi-backend.onrender.com/api/private/user/${userID}/delete`,config);
     localStorage.removeItem('authToken');
     history.push('/signup');
   } catch (err) {

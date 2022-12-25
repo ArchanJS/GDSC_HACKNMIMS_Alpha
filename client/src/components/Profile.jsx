@@ -37,7 +37,7 @@ function Profile() {
                   Authorization: `Bearer ${localStorage.getItem("authToken")}`,
                 },
               };
-            const {data}=await axios.get("/api/private",config);
+            const {data}=await axios.get("https://medi-backend.onrender.com/api/private",config);
             setName(data.user.username);
             setPhone(data.user.phone)
             setEmail(data.user.email)

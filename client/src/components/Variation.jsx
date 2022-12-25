@@ -22,7 +22,7 @@ function Variation() {
                     "Content-Type": "application/json",
                 },
             };
-            const { data } = await axios.get(`/api/auth//user/${userID}`, config);
+            const { data } = await axios.get(`https://medi-backend.onrender.com/api/auth//user/${userID}`, config);
             setParam1(data.param1);
             setParam2(data.param2);
         } catch (err) {

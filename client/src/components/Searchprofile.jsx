@@ -27,7 +27,7 @@ function Profile() {
                 "Content-Type": "application/json"
               },
             };
-            const { data } = await axios.get(`/api/auth/user/${userID}`, config);
+            const { data } = await axios.get(`https://medi-backend.onrender.com/api/auth/user/${userID}`, config);
           setName(data.username);
           setPhone(data.phone)
           setEmail(data.email)
